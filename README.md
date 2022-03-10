@@ -30,7 +30,7 @@
 <br>
 
 ## 🚀 Ignite Challenge #02 | WatchMe   
-This is the first challenge of the ReactJS trail of [Ignite](https://rocketseat.com.br/ignite).
+This is the second challenge of the ReactJS trail of [Ignite](https://rocketseat.com.br/ignite).
 
 <br> 
 
