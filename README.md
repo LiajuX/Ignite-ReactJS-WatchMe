@@ -1,4 +1,5 @@
 <h1 align="center">
+  <br/>
   <img src="./public/logo-readme.svg" alt="WatchMe" width="350px">
 </h1>
 
