@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { memo, ReactNode } from 'react';
 
 import '../styles/content.scss';
 
@@ -7,7 +7,7 @@ interface ContentProps {
   children: ReactNode;
 }
 
-export function Content({ title, children }: ContentProps) {
+function ContentComponent({ title, children }: ContentProps) {
   return (
     <div className="container">
       <header>
@@ -22,3 +22,7 @@ export function Content({ title, children }: ContentProps) {
     </div>
   );
 }
+
+export const Content = memo(ContentComponent, (prevProps, nextProps) => {
+  return Object.is(prevProps.title, nextProps.title);
+});

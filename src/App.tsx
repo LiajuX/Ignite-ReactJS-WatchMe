@@ -1,15 +1,13 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
 import { SideBar } from './components/SideBar';
 import { Content } from './components/Content';
 import { Button } from './components/Button';
 import { MovieCard } from './components/MovieCard';
 
-
 import { api } from './services/api';
 
 import './styles/global.scss';
-
 interface GenreResponseProps {
   id: number;
   name: 'action' | 'comedy' | 'documentary' | 'drama' | 'horror' | 'family';
@@ -48,12 +46,12 @@ export function App() {
 
     api.get<GenreResponseProps>(`genres/${selectedGenreId}`).then(response => {
       setSelectedGenre(response.data);
-    })
+    });
   }, [selectedGenreId]);
 
-  function handleClickButton(id: number) {
+  const handleClickButton = useCallback((id: number) => {
     setSelectedGenreId(id);
-  }
+  }, []);
 
   return (
     <div style={{ display: 'flex', flexDirection: 'row' }}>
